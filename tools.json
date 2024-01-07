@@ -1,0 +1,17 @@
+{
+    "type": "function",
+    "function": {
+        "name": "query_wolframalpha",
+        "description": "Query Wolfram Alpha for information",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The query to send to Wolfram Alpha"
+                }
+            },
+            "required": ["query"]
+        }
+    }
+}

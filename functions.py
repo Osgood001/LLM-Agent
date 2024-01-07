@@ -4,6 +4,7 @@ from openai import OpenAI
 from prompts import assistant_instructions
 from dotenv import load_dotenv
 load_dotenv()
+from tools.mathematica import tool_wolframalpha
 
 # OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 OPENAI_API_KEY = "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"
@@ -11,40 +12,54 @@ OPENAI_API_KEY = "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"
 # Init OpenAI Client
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-# Create or load assistant
-def create_assistant(client, file_path="knowledge.pdf"):
-  assistant_file_path = 'assistant.json'
+def create_assistant(client, name, description, file_path, tools, prompt):
+  assistant_file_path = 'preset.json'
 
-  # If there is an assistant.json file already
+  # Load existing data
   if os.path.exists(assistant_file_path):
     with open(assistant_file_path, 'r') as file:
-      assistant_data = json.load(file)
-      assistant_id = assistant_data['assistant_id']
-      print("Loaded existing assistant ID.")
+      data = json.load(file)
   else:
-    # If no assistant.json is present, create a new assistant using the below specifications
+    data = {}
 
-    # To change the knowledge document, modify the file name below to match your document
-    # If you want to add multiple files, paste this function into ChatGPT and ask for it to add support for multiple files
-    file = client.files.create(file=open(file_path, "rb"),
-                               purpose='assistants')
+  # Check if assistant already exists
+  for key, assistant_data in data.items():
+    if assistant_data['name'] == name:
+      print(f"Loaded existing assistant ID for {name}.")
+      return assistant_data['assistant_id']
 
-    assistant = client.beta.assistants.create(
-        # Getting assistant prompt from "prompts.py" file, edit on left panel if you want to change the prompt
-        instructions=assistant_instructions,
-        model="gpt-3.5-turbo-1106",
-        tools=[
-            {
-                "type": "retrieval"  # This adds the knowledge base as a tool
-            },
-        ],
-        file_ids=[file.id])
+  # If no assistant.json is present, create a new assistant using the below specifications
+  if not os.path.exists(file_path):
+    file = client.files.retrieve("file-Wp3snAIbfaGk3Riy6TAwiffZ")
+  else:
+    file = client.files.create(file=open(file_path, "rb"), purpose='assistants')
 
-    # Create a new assistant.json file to load on future runs
-    with open(assistant_file_path, 'w') as file:
-      json.dump({'assistant_id': assistant.id, 'file_path': file_path}, file)
-      print("Created a new assistant and saved the ID.")
+  assistant = client.beta.assistants.create(
+    name=name,
+    description=description,
+    instructions=prompt,
+    model="gpt-3.5-turbo-1106",
+    tools=[
+      {
+        'type': tools,
+      },
+      tool_wolframalpha, 
+      ],
+    file_ids=[file.id])
 
-    assistant_id = assistant.id
+  # Add new assistant data
+  data[str(len(data) + 1)] = {
+    'name': name,
+    'assistant_id': assistant.id,
+    'tools': tools,
+    'file_path': file_path,
+    'description': description,
+    'prompt': prompt
+  }
 
-  return assistant_id
+  # Save updated data
+  with open(assistant_file_path, 'w') as file:
+    json.dump(data, file)
+
+  print(f"Created a new assistant named {name} and saved the ID.")
+  return assistant.id
