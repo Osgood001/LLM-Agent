@@ -53,7 +53,7 @@ tool_wolframalpha = {
 
 # Test the function
 if __name__ == '__main__':
-    path = r"C:\D\Cloud\OneDrive\应用\remotely-save\Obsidian_Osgood\3.Practice\LLM Agent\test.json"
+    path = r"C:\D\Cloud\OneDrive\应用\remotely-save\Obsidian_Osgood\3.Practice\LLM Agent\tools\test.json"
     with open(path, 'r') as f:
         result = query_wolframalpha(f.read())
     print(result)

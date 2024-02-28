@@ -1,13 +1,11 @@
 import json
 import os
 from openai import OpenAI
-from prompts import assistant_instructions
 from dotenv import load_dotenv
 load_dotenv()
 from tools.mathematica import tool_wolframalpha
 
-# OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 # Init OpenAI Client
 client = OpenAI(api_key=OPENAI_API_KEY)
