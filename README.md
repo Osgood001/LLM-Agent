@@ -1,3 +1,11 @@
+# A LLM-Driven Agent framework
+
+This project is a demo for LLM-Agent. It can use tools like wolfram Alpha to get latest data and accurate information.
+
+A demonstration on how left and right brain mindset could combine to solve real world problems.
+
+Examples below.
+
 ## Solving a biogenetic problem
 ```mathematica
 Hello 
