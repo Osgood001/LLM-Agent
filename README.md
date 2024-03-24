@@ -12,21 +12,25 @@ Examples below.
 
 ![Screenshot_20240324_110837.jpg](https://github.com/Osgood001/LLM-Agent/assets/60919782/b77fdcb6-bca9-4681-abe6-b8391835b403)
 
-### Daily activities
+### Weather related data
+
 
 ![Screenshot_20240324_110818.jpg](https://github.com/Osgood001/LLM-Agent/assets/60919782/6633bb92-0b6c-417c-ac8d-ad807696f736)
 
-### Weather related data
+### Daily activities
 
 ![Screenshot_20240324_110828.jpg](https://github.com/Osgood001/LLM-Agent/assets/60919782/df24d65a-0ac6-488e-a770-183945c320b0)
 
-### Accurate stock market information
+### Geographical Result
 
 ![Screenshot_20240324_110758.jpg](https://github.com/Osgood001/LLM-Agent/assets/60919782/a50d7616-1e25-4279-a0ed-72d8d5f6dcdf)
 
-### Geographical Result
+### Accurate stock market information
 
 ![Screenshot_20240324_110810.jpg](https://github.com/Osgood001/LLM-Agent/assets/60919782/6aba331f-b1b3-47a5-8892-94d1e7689f02)
+
+
+
 
 
 ## Iterative general problem solving
