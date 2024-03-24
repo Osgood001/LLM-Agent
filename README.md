@@ -6,7 +6,33 @@ A demonstration on how left and right brain mindset could combine to solve real 
 
 Examples below.
 
-## Solving a biogenetic problem
+## Information Query
+
+### Accurate math computation
+
+![Screenshot_20240324_110837.jpg](https://github.com/Osgood001/LLM-Agent/assets/60919782/b77fdcb6-bca9-4681-abe6-b8391835b403)
+
+### Daily activities
+
+![Screenshot_20240324_110818.jpg](https://github.com/Osgood001/LLM-Agent/assets/60919782/6633bb92-0b6c-417c-ac8d-ad807696f736)
+
+### Weather related data
+
+![Screenshot_20240324_110828.jpg](https://github.com/Osgood001/LLM-Agent/assets/60919782/df24d65a-0ac6-488e-a770-183945c320b0)
+
+### Accurate stock market information
+
+![Screenshot_20240324_110758.jpg](https://github.com/Osgood001/LLM-Agent/assets/60919782/a50d7616-1e25-4279-a0ed-72d8d5f6dcdf)
+
+### Geographical Result
+
+![Screenshot_20240324_110810.jpg](https://github.com/Osgood001/LLM-Agent/assets/60919782/6aba331f-b1b3-47a5-8892-94d1e7689f02)
+
+
+## Iterative general problem solving
+
+
+### Solving a biogenetic problem
 ```mathematica
 Hello 
  Welcome to the Agent System.
@@ -110,23 +136,17 @@ Therefore, the L50 value is 4.
 
 So, the L50 for the given contig lengths is 4.
 ```
-结果是对的，哈哈。
 
-## A quantum mechanics problem
+The result is correct, all by agent itself, without human interference/prior knowledge.
+
+
+
+### A quantum mechanics problem
 
 ```mathematica
-Hello 
- Welcome to the Agent System.
- We provide you with the following chatbots:
-1. a: b
-2. test_bot: read the file and return the content of the file exactly
-3. Mmaster: Use Mathematica to solve anything
-4. good_boy: test again
-5. Create a new assistant
+Enter your message: 
+Derive the probability flow distribution of spherical wave $\braket{\vec{r}|\psi} = \frac{1}{(2\pi)^{3/2}}\frac{e^{ikr}}{r}$, and discuss the behavior when $r\rightarrow\infty$.
 
- Please enter the index of your choice: 3
-Loaded existing assistant ID for Mmaster.
-Enter your message: Derive the probability flow distribution of spherical wave $\braket{\vec{r}|\psi} = \frac{1}{(2\pi)^{3/2}}\frac{e^{ikr}}{r}$, and discuss the behavior when $r\rightarrow\infty$.
 Received message: Derive the probability flow distribution of spherical wave $\braket{\vec{r}|\psi} = \frac{1}{(2\pi)^{3/2}}\frac{e^{ikr}}{r}$, and discuss the behavior when $r\rightarrow\infty$. in thread thread_RxUKPMWnZrerP2lXr30QhTKk
 
  Querying Wolfram Alpha for information...
